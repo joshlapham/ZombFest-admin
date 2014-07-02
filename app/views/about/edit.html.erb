@@ -1,0 +1,28 @@
+<%= link_to("<< Back", {:controller => 'dashboard', :action => 'index'}, :class => 'back-link btn btn-default') %>
+
+<br />
+
+<section id="edit-about-content">
+
+	<h3>Edit About Content</h3>
+
+	<%= form_for(@about_content, :url => {:controller => 'about', :action => 'update', :id => @about_content.id}) do |t| %>
+		
+		<table class="table table-bordered table-condensed table-striped">
+			<tr>
+				<th>Title</th>
+				<td><%= t.text_field(:title) %></td>
+			</tr>
+			<tr>
+				<th>Content</th>
+				<td><%= t.text_area(:content, :cols => '50', :rows => '10') %></td>
+			</tr>
+		</table>
+
+		<%= submit_tag("Update About Content", :class => "btn btn-success") %>
+
+	<% end %>
+
+</section>
+
+<br />

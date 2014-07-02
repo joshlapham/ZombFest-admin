@@ -1,0 +1,8 @@
+// Place all the styles related to the Dashboard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Add some padding between things
+#news-items-list, #about-list, #past-events-list, #future-events-list, #videos-list, #social-media-links-list {
+	margin-bottom: 4%;
+}

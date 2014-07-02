@@ -1,0 +1,21 @@
+<%= link_to("<< Back", {:controller => 'dashboard', :action => 'index'}, :class => 'back-link btn btn-default') %>
+
+<br />
+
+<section id="delete-event">
+
+	<h3>Delete Past Event</h3>
+
+	<%= form_for(:past_event, :url => {:controller => 'past_events', :action => 'destroy', :id => @past_event.id}) do |t| %>
+
+		<p>Are you sure you want to delete?</p>
+
+		<p class="reference-name"><%= @past_event.year %></p>
+
+		<%= submit_tag("Delete Past Event", :class => "btn btn-primary") %>
+
+	<% end %>
+
+</section>
+
+<br />

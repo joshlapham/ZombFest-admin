@@ -1,0 +1,16 @@
+<section>
+	<%= link_to("<< Back", {:controller => 'dashboard', :action => 'index'}, :class => 'back-link') %>
+</section>
+
+<br />
+
+<section id="event-detail">
+
+	<table class="table table-bordered table-condensed">
+		<tr>
+			<th>Year</th>
+			<td><%= @event.year %></td>
+		</tr>
+	</table>
+	
+</section>

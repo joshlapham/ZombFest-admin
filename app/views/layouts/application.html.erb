@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NUS | <%= @page_title || "Admin" %></title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<section class="container">
+
+	<section id="header" class="row">
+		<section class="col-md-9">
+			<h1>Newcastle Undead Society <small>iOS App Admin</small></h1>
+		</section>
+
+		<section class="col-md-3" id="menu-buttons">
+			<% if session[:user_id] %>
+				<%= link_to("Show JSON", {:controller => 'api', :action => 'data', :format => :json}, :class => 'btn btn-info') %>
+				<%= link_to("Logout", {:controller => "access", :action => "logout"}, :class => "btn btn-info") %>
+			<% end %>
+		</section>
+	</section><!-- /header -->
+
+	<hr>
+
+	<% if !flash[:notice].blank? %>
+		<section class="alert alert-info">
+		<%= flash[:notice] %>
+		</section>
+	<% end %>
+
+	<%= yield %>
+
+	<hr>
+
+	<footer class="footer">
+		<p class="copyright">&copy; Me Inc.</p>
+	</footer><!-- /footer -->
+
+</section><!-- /container -->
+
+</body>
+</html>

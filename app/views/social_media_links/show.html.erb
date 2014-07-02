@@ -1,0 +1,28 @@
+<section>
+	<%= link_to("<< Back", {:controller => 'dashboard', :action => 'index'}, :class => 'back-link btn btn-default') %>
+</section>
+
+<br />
+
+<section id="social-link-detail">
+
+	<table class="table table-bordered table-condensed table-striped">
+		<tr>
+			<th>Title</th>
+			<td><%= @social_link.title %></td>
+		</tr>
+		<tr>
+			<th>URL</th>
+			<td><a href="<%= @social_link.url %>" target="_blank"><%= @social_link.url %></a></td>
+		</tr>
+		<tr>
+			<th>Image URL</th>
+			<td><%= @social_link.image_url %></td>
+		</tr>
+		<tr>
+			<th>Image</th>
+			<td><img src="<%= @social_link.image_url %>" /></td>
+		</tr>
+	</table>
+	
+</section>

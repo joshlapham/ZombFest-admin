@@ -1,0 +1,48 @@
+<section>
+	<%= link_to("<< Back", {:controller => 'dashboard', :action => 'index'}, :class => 'back-link btn btn-default') %>
+</section>
+
+<br />
+
+<section id="video-detail">
+
+	<table class="table table-bordered table-condensed table-striped">
+		<tr>
+			<th>ID For App</th>
+			<td><%= @videos.id_for_app %></td>
+		</tr>
+		<tr>
+			<th>Title</th>
+			<td><%= @videos.title %></td>
+		</tr>
+		<tr>
+			<th>Author</th>
+			<td><%= @videos.author %></td>
+		</tr>
+		<tr>
+			<th>Year</th>
+			<td><%= @videos.year %></td>
+		</tr>
+		<tr>
+			<th>Duration</th>
+			<td><%= @videos.duration %></td>
+		</tr>
+		<tr>
+			<th>Video URL</th>
+			<td><a href="<%= @videos.video_url %>" target="_blank"><%= @videos.video_url %></a></td>
+		</tr>
+		<tr>
+			<th>Image URL</th>
+			<td><%= @videos.image_url %></td>
+		</tr>
+		<tr>
+			<th>Video Type</th>
+			<td><%= @videos.return_video_type %></td>
+		</tr>
+		<tr>
+			<th>Image</th>
+			<td><img src="<%= @videos.image_url %>" /></td>
+		</tr>
+	</table>
+	
+</section>

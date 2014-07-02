@@ -1,0 +1,21 @@
+<%= link_to("<< Back", {:controller => 'dashboard', :action => 'index'}, :class => 'back-link btn btn-default') %>
+
+<br />
+
+<section id="delete-event">
+
+	<h3>Delete Future Event</h3>
+
+	<%= form_for(:future_event, :url => {:controller => 'future_events', :action => 'destroy', :id => @future_event.id}) do |t| %>
+
+		<p>Are you sure you want to delete?</p>
+
+		<p class="reference-name"><%= @future_event.year %></p>
+
+		<%= submit_tag("Delete Future Event", :class => "btn btn-primary") %>
+
+	<% end %>
+
+</section>
+
+<br />

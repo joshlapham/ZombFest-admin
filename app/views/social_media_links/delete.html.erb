@@ -1,0 +1,21 @@
+<%= link_to("<< Back", {:controller => 'dashboard', :action => 'index'}, :class => 'back-link btn btn-default') %>
+
+<br />
+
+<section id="delete-social-link">
+
+	<h3>Delete Social Link</h3>
+
+	<%= form_for(:social_media_link, :url => {:controller => 'social_media_links', :action => 'destroy', :id => @social_link.id}) do |t| %>
+
+		<p>Are you sure you want to delete?</p>
+
+		<p class="reference-name"><%= @social_link.url %></p>
+
+		<%= submit_tag("Delete Social Link", :class => "btn btn-primary") %>
+
+	<% end %>
+
+</section>
+
+<br />

@@ -1,0 +1,41 @@
+<section>
+	<%= link_to("<< Back", {:controller => 'dashboard', :action => 'index'}, :class => 'back-link btn btn-default') %>
+</section>
+
+<br />
+
+<section id="event-detail">
+
+	<table class="table table-bordered table-condensed table-striped">
+		<tr>
+			<th>Year</th>
+			<td><%= @future_event.year %></td>
+		</tr>
+		<tr>
+			<th>Content</th>
+			<td><%= @future_event.content %></td>
+		</tr>
+		<tr>
+			<th>Image URL</th>
+			<td><%= @future_event.image_url %></td>
+		</tr>
+		<tr>
+			<th>Image</th>
+			<td><img src="<%= @future_event.image_url %>" /></td>
+		</tr>
+	</table>
+
+	<table class="table table-bordered table-condensed table-striped">
+		<tr>
+			<th>Location</th>
+			<th>Start Time</th>
+		</tr>
+		<% @future_event.future_event_times.each do |event_time| %>
+			<tr>
+				<td><%= event_time.location_name %></td>
+				<td><%= event_time.start_time %></td>
+			</tr>
+		<% end %>
+	</table>
+	
+</section>

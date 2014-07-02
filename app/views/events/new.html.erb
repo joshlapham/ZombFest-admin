@@ -1,0 +1,26 @@
+<% @page_title = "Add Event" %>
+
+<%= link_to("<< Back", {:controller => 'dashboard', :action => 'index'}, :class => 'back-link') %>
+
+<br />
+
+<section id="add-new-event">
+
+	<h3>Add Event</h3>
+
+	<%= form_for(:event, :url => {:controller => 'events', :action => 'create'}) do |t| %>
+		
+		<table class="table table-bordered table-condensed">
+			<tr>
+				<th>Year</th>
+				<td><%= t.text_field(:year) %></td>
+			</tr>
+		</table>
+
+		<%= submit_tag("Create Event", :class => "btn btn-primary") %>
+
+	<% end %>
+
+</section>
+
+<br />

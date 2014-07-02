@@ -1,0 +1,28 @@
+<section>
+	<%= link_to("<< Back", {:controller => 'dashboard', :action => 'index'}, :class => 'back-link btn btn-default') %>
+</section>
+
+<br />
+
+<section id="news-item-detail">
+
+	<table class="table table-bordered table-condensed table-striped">
+		<tr>
+			<th>ID For App</th>
+			<td><%= @news_item.id_for_app %></td>
+		</tr>
+		<tr>
+			<th>Title</th>
+			<td><%= @news_item.title %></td>
+		</tr>
+			<tr>
+				<th>Date</th>
+				<td><%= @news_item.date %></td>
+			</tr>
+		<tr>
+			<th>Content</th>
+			<td><%= @news_item.content %></td>
+		</tr>
+	</table>
+	
+</section>

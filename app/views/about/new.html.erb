@@ -1,0 +1,30 @@
+<% @page_title = "Add About Content" %>
+
+<%= link_to("<< Back", {:controller => 'dashboard', :action => 'index'}, :class => 'back-link btn btn-default') %>
+
+<br />
+
+<section id="add-new-about-content">
+
+	<h3>Add About Content</h3>
+
+	<%= form_for(:about, :url => {:controller => 'about', :action => 'create'}) do |t| %>
+		
+		<table class="table table-bordered table-condensed table-striped">
+			<tr>
+				<th>Title</th>
+				<td><%= t.text_field(:title) %></td>
+			</tr>
+			<tr>
+				<th>Content</th>
+				<td><%= t.text_area(:content, :cols => '50', :rows => '10') %></td>
+			</tr>
+		</table>
+
+		<%= submit_tag("Create About Content", :class => "btn btn-success") %>
+
+	<% end %>
+
+</section>
+
+<br />

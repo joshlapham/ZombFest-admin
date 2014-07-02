@@ -1,0 +1,32 @@
+<%= link_to('<< Back', {:controller => 'dashboard', :action => 'index'}, :class => 'back-link btn btn-default') %>
+
+<br />
+
+<section id="edit-social-link">
+
+	<h3>Edit Social Link</h3>
+
+	<%= form_for(@social_link, :url => {:controller => 'social_media_links', :action => 'update', :id => @social_link.id}) do |t| %>
+		
+		<table class="table table-bordered table-condensed table-striped">
+			<tr>
+				<th>Title</th>
+				<td><%= t.text_field :title %></td>
+			</tr>
+			<tr>
+				<th>URL</th>
+				<td><%= t.text_field :url %></td>
+			</tr>
+			<tr>
+				<th>Image URL</th>
+				<td><%= t.text_field :image_url %></td>
+			</tr>
+		</table>
+
+		<%= submit_tag('Update Social Link', :class => 'btn btn-success') %>
+
+	<% end %>
+
+</section>
+
+<br />

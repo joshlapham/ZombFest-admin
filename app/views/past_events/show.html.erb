@@ -1,0 +1,39 @@
+<section>
+	<%= link_to("<< Back", {:controller => 'dashboard', :action => 'index'}, :class => 'back-link btn btn-default') %>
+</section>
+
+<br />
+
+<section id="event-detail">
+
+	<table class="table table-bordered table-condensed table-striped">
+		<tr>
+			<th>Year</th>
+			<td><%= @past_event.year %></td>
+		</tr>
+		<tr>
+			<th>Content</th>
+			<td><%= @past_event.content %></td>
+		</tr>
+		<tr>
+			<th>Image URL</th>
+			<td><a href="<%= @past_event.image_url %>" target="_blank"><%= @past_event.image_url %></a></td>
+		</tr>
+		<tr>
+			<th>Image</th>
+			<td><img src="<%= @past_event.image_url %>" /></td>
+		</tr>
+	</table>
+
+	<table class="table table-bordered table-condensed table-striped">
+		<tr>
+			<th>Gallery URLs</th>
+		</tr>
+		<% @past_event.gallery_urls.each do |gallery_url| %>
+			<tr>
+				<td><a href="<%= gallery_url.url %>" target="_blank"><%= gallery_url.url %></a></td>
+			</tr>
+		<% end %>
+	</table>
+	
+</section>
