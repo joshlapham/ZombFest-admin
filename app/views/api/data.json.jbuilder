@@ -28,6 +28,8 @@ json.futureEvents @future_events do |event|
 	json.eventTimes event.future_event_times do |event_time|
 		json.locationName event_time.location_name
 		json.startTime event_time.start_time
+		json.lat event_time.lat
+		json.long event_time.long
 	end
 end
 
