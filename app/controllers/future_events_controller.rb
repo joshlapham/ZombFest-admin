@@ -54,7 +54,7 @@ class FutureEventsController < ApplicationController
   # - raises an error if title not present
   # - allows listed attribs to be mass-assigned
   def event_params
-    params.require(:future_event).permit(:year, :image_url, :content)
+    params.require(:future_event).permit(:year, :image_url, :content, :date)
   end
 
 end

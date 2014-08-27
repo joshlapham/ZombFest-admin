@@ -110,16 +110,18 @@
 	<table class="table table-bordered table-condensed table-striped">
 		<tr>
 			<th>Year</th>
+			<th>Date</th>
 			<th>Content</th>
-			<th>Image URL</th>
+			<th>Image</th>
 			<th>Event Times</th>
 			<th>Actions</th>
 		</tr>
 		<% @future_events.each do |event| %>
 			<tr>
 				<td><%= event.year %></td>
+				<td><%= event.date %></td>
 				<td><%= event.content %></td>
-				<td>...</td>
+				<td><%= link_to("Show", event.image_url, :target => "_blank") %></td>
 				<td>...</td>
 				<td class="actions">
 					<%= link_to("Show", {:controller => 'future_events', :action => 'show', :id => event.id}, :class => 'btn btn-default action show-action') %>

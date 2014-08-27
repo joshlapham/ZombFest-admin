@@ -25,6 +25,7 @@ end
 
 json.futureEvents @future_events do |event|
 	json.year event.year
+	json.date event.date
 	json.imageUrl event.image_url
 	json.content event.content
 	json.eventTimes event.future_event_times do |event_time|
