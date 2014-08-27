@@ -54,7 +54,7 @@ class PastEventsController < ApplicationController
   # - raises an error if title not present
   # - allows listed attribs to be mass-assigned
   def event_params
-    params.require(:past_event).permit(:year, :image_url, :content)
+    params.require(:past_event).permit(:year, :image_url, :content, :date)
   end
 
 end

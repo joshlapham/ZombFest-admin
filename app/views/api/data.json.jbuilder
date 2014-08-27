@@ -13,6 +13,7 @@ end
 
 json.pastEvents @past_events do |event|
 	json.year event.year
+	json.date event.date
 	json.imageUrl event.image_url
 	gallery_urls_array = []
 	event.gallery_urls.each do |item|

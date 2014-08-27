@@ -76,17 +76,17 @@
 	<table class="table table-bordered table-condensed table-striped">
 		<tr>
 			<th>Year</th>
+			<th>Date</th>
 			<th>Content</th>
-			<th>Image URL</th>
-			<th>Gallery URLs</th>
+			<th>Image</th>
 			<th>Actions</th>
 		</tr>
 		<% @past_events.each do |event| %>
 			<tr>
 				<td><%= event.year %></td>
+				<td><%= event.date %></td>
 				<td><%= event.content %></td>
-				<td>...</td>
-				<td>...</td>
+				<td><%= link_to("Show", event.image_url, :target => "_blank") %></td>
 				<td class="actions">
 					<%= link_to("Show", {:controller => 'past_events', :action => 'show', :id => event.id}, :class => 'btn btn-default action show-action') %>
 					<%= link_to("Edit", {:controller => 'past_events', :action => 'edit', :id => event.id}, :class => 'btn btn-default action edit') %>
