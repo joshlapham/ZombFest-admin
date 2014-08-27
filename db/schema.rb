@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140803033131) do
+ActiveRecord::Schema.define(version: 20140827001958) do
 
   create_table "abouts", force: true do |t|
     t.string   "title"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 20140803033131) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "id_for_app"
+    t.string   "url"
   end
 
   create_table "past_events", force: true do |t|

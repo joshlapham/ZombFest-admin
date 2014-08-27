@@ -25,6 +25,10 @@
 				<th>Content</th>
 				<td><%= t.text_area(:content, :cols => '50', :rows => '10') %></td>
 			</tr>
+			<tr>
+				<th>URL</th>
+				<td><%= t.text_field(:url) %></td>
+			</tr>
 		</table>
 
 		<%= submit_tag("Update News Item", :class => "btn btn-success") %>

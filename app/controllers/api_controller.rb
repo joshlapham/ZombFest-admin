@@ -1,9 +1,8 @@
 class ApiController < ApplicationController
 
-  #respond_to :json
+  respond_to :json
 
   def data
-    @events = Event.all
     @past_events = PastEvent.all
     @future_events = FutureEvent.all
     @news_items = NewsItem.all

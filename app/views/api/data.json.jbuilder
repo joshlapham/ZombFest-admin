@@ -3,6 +3,7 @@ json.newsItems @news_items do |news_item|
 	json.date news_item.date
 	json.title news_item.title
 	json.content news_item.content
+	json.url news_item.url
 end
 
 json.aboutContent @about_content do |about_content|

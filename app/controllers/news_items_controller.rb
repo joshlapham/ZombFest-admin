@@ -54,7 +54,7 @@ class NewsItemsController < ApplicationController
   # - raises an error if title not present
   # - allows listed attribs to be mass-assigned
   def news_item_params
-    params.require(:news_item).permit(:title, :date, :content, :id_for_app)
+    params.require(:news_item).permit(:title, :date, :content, :id_for_app, :url)
   end
 
 end

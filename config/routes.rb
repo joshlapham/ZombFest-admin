@@ -5,8 +5,15 @@ Rails.application.routes.draw do
   get 'admin', :to => 'access#index'
   get 'logout', :to => 'access#logout'
 
-  resources :dashboard, :social_media_links, :videos
+  resources :dashboard, :social_media_links, :videos, :about
 
+  # API
+  namespace :api do
+    namespace :v1 do
+      resources :events, :future_events, :news_items, :past_events, :social_media_links, :videos
+    end
+  end
+  
   # NOTE: this should be last, and take out in production
   match ':controller(/:action(/:id))', :via => [:get, :post]
 
