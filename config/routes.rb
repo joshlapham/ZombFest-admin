@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'admin', :to => 'access#index'
   get 'logout', :to => 'access#logout'
 
-  resources :dashboard, :social_media_links, :videos, :about
+  resources :dashboard, :social_media_links, :videos, :about, :articles
 
   # API
   namespace :api do

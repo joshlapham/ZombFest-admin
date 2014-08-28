@@ -49,6 +49,14 @@ json.videos @videos do |video|
 	json.isOther video.is_other
 end
 
+json.articles @articles do |article|
+	json.title article.title
+	json.author article.author
+	json.date article.date
+	json.year article.year
+	json.url article.url
+end
+
 json.socialMediaLinks @social_links do |social_link|
 	json.title social_link.title
 	json.url social_link.url

@@ -11,6 +11,7 @@ class DashboardController < ApplicationController
     @about_content = About.all
     @videos = Video.all
     @found_content = About.first
+    @articles = Article.all
   end
 
 end

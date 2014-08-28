@@ -28,7 +28,7 @@
 		<% end %>
 	</table>
 
-</section>
+</section><!-- /#news-items-list -->
 
 <section class="section-header">
 	<h3>About Content</h3>
@@ -62,7 +62,7 @@
 		<% end %>
 	</table>
 
-</section>
+</section><!-- /#about-list -->
 
 <section class="section-header">
 	<h3>Past Events</h3>
@@ -77,16 +77,16 @@
 		<tr>
 			<th>Year</th>
 			<th>Date</th>
-			<th>Content</th>
 			<th>Image</th>
+			<th>Gallery URLs</th>
 			<th>Actions</th>
 		</tr>
 		<% @past_events.each do |event| %>
 			<tr>
 				<td><%= event.year %></td>
 				<td><%= event.date %></td>
-				<td><%= event.content %></td>
-				<td><%= link_to("Show", event.image_url, :target => "_blank") %></td>
+				<td><%= link_to("Open", event.image_url, :target => "_blank") %></td>
+				<td>...</td>
 				<td class="actions">
 					<%= link_to("Show", {:controller => 'past_events', :action => 'show', :id => event.id}, :class => 'btn btn-default action show-action') %>
 					<%= link_to("Edit", {:controller => 'past_events', :action => 'edit', :id => event.id}, :class => 'btn btn-default action edit') %>
@@ -96,7 +96,7 @@
 		<% end %>
 	</table>
 
-</section>
+</section><!-- /#past-events-list -->
 
 <section class="section-header">
 	<h3>Future Events</h3>
@@ -111,7 +111,6 @@
 		<tr>
 			<th>Year</th>
 			<th>Date</th>
-			<th>Content</th>
 			<th>Image</th>
 			<th>Event Times</th>
 			<th>Actions</th>
@@ -120,8 +119,7 @@
 			<tr>
 				<td><%= event.year %></td>
 				<td><%= event.date %></td>
-				<td><%= event.content %></td>
-				<td><%= link_to("Show", event.image_url, :target => "_blank") %></td>
+				<td><%= link_to("Open", event.image_url, :target => "_blank") %></td>
 				<td>...</td>
 				<td class="actions">
 					<%= link_to("Show", {:controller => 'future_events', :action => 'show', :id => event.id}, :class => 'btn btn-default action show-action') %>
@@ -132,7 +130,7 @@
 		<% end %>
 	</table>
 
-</section>
+</section><!-- /#future-events-list -->
 
 <section class="section-header">
 	<h3>Videos</h3>
@@ -159,7 +157,7 @@
 				<td><%= video.author %></td>
 				<td><%= video.year %></td>
 				<td><%= video.duration %></td>
-				<td><a href="<%= video.video_url %>" target="_blank"><%= video.video_url %></a></td>
+				<td><a href="<%= video.video_url %>" target="_blank">Open</a></td>
 				<td><%= video.return_video_type %></td>
 				<td class="actions">
 					<%= link_to("Show", {:controller => 'videos', :action => 'show', :id => video.id}, :class => 'btn btn-default action show-action') %>
@@ -170,7 +168,43 @@
 		<% end %>
 	</table>
 
+</section><!-- /#videos-list -->
+
+<section class="section-header">
+	<h3>Articles</h3>
+	<%= link_to("+ Add Article", {:controller => 'articles', :action => 'new'}, :class => 'btn btn-default') %>
 </section>
+
+<br />
+
+<section id="articles-list">
+
+	<table class="table table-bordered table-condensed table-striped">
+		<tr>
+			<th>Title</th>
+			<th>Author</th>
+			<th>Date</th>
+			<th>Year</th>
+			<th>URL</th>
+			<th>Actions</th>
+		</tr>
+		<% @articles.each do |article| %>
+			<tr>
+				<td><%= article.title %></td>
+				<td><%= article.author %></td>
+				<td><%= article.date %></td>
+				<td><%= article.year %></td>
+				<td><a href="<%= article.url %>" target="_blank">Open</a></td>
+				<td class="actions">
+					<%= link_to("Show", {:controller => 'articles', :action => 'show', :id => article.id}, :class => 'btn btn-default action show-action') %>
+					<%= link_to("Edit", {:controller => 'articles', :action => 'edit', :id => article.id}, :class => 'btn btn-default action edit') %>
+					<%= link_to("Delete", {:controller => 'articles', :action => 'delete', :id => article.id}, :class => 'btn btn-danger action delete') %>
+				</td>
+			</tr>
+		<% end %>
+	</table>
+
+</section><!-- /#articles-list -->
 
 <section class="section-header">
 	<h3>Social Media Links</h3>
@@ -192,7 +226,7 @@
 			<tr>
 				<td><%= social_link.title %></td>
 				<td><a href="<%= social_link.url %>" target="_blank"><%= social_link.url %></a></td>
-				<td><%= social_link.image_url %></td>
+				<td><%= link_to("Open", social_link.image_url, :target => "_blank") %></td>
 				<td class="actions">
 					<%= link_to("Show", {:controller => 'social_media_links', :action => 'show', :id => social_link.id}, :class => 'btn btn-default action show-action') %>
 					<%= link_to("Edit", {:controller => 'social_media_links', :action => 'edit', :id => social_link.id}, :class => 'btn btn-default action edit') %>
@@ -202,4 +236,4 @@
 		<% end %>
 	</table>
 
-</section>
+</section><!-- /#social-media-links-list -->

@@ -1,0 +1,44 @@
+<%= link_to('<< Back', {:controller => 'dashboard', :action => 'index'}, :class => 'back-link btn btn-default') %>
+
+<br />
+
+<section id="edit-article">
+
+	<h3>Edit Article</h3>
+
+	<%= form_for(@articles, :url => {:controller => 'articles', :action => 'update', :id => @articles.id}) do |t| %>
+		
+		<table class="table table-bordered table-condensed table-striped">
+			<tr>
+				<th>Title</th>
+				<td><%= t.text_field :title %></td>
+			</tr>
+			<tr>
+				<th>Author</th>
+				<td><%= t.text_field :author %></td>
+			</tr>
+			<tr>
+				<th>Date</th>
+				<td><%= t.text_field :date %></td>
+			</tr>
+			<tr>
+				<th>Year</th>
+				<td><%= t.text_field :year %></td>
+			</tr>
+			<tr>
+				<th>URL</th>
+				<td><%= t.text_field :url %></td>
+			</tr>
+			<tr>
+				<th>Is Active?</th>
+				<td><%= t.check_box :is_active %></td>
+			</tr>
+		</table>
+
+		<%= submit_tag('Update Article', :class => 'btn btn-success') %>
+
+	<% end %>
+
+</section>
+
+<br />

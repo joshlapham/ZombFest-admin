@@ -1,0 +1,21 @@
+<%= link_to("<< Back", {:controller => 'dashboard', :action => 'index'}, :class => 'back-link btn btn-default') %>
+
+<br />
+
+<section id="delete-article">
+
+	<h3>Delete Article</h3>
+
+	<%= form_for(:articles, :url => {:controller => 'articles', :action => 'destroy', :id => @articles.id}) do |t| %>
+
+		<p>Are you sure you want to delete?</p>
+
+		<p class="reference-name"><%= @articles.url %></p>
+
+		<%= submit_tag("Delete Article", :class => "btn btn-primary") %>
+
+	<% end %>
+
+</section>
+
+<br />

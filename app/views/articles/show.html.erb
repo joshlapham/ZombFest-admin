@@ -1,0 +1,32 @@
+<section>
+	<%= link_to("<< Back", {:controller => 'dashboard', :action => 'index'}, :class => 'back-link btn btn-default') %>
+</section>
+
+<br />
+
+<section id="article-detail">
+
+	<table class="table table-bordered table-condensed table-striped">
+		<tr>
+			<th>Title</th>
+			<td><%= @articles.title %></td>
+		</tr>
+		<tr>
+			<th>Author</th>
+			<td><%= @articles.author %></td>
+		</tr>
+		<tr>
+			<th>Date</th>
+			<td><%= @articles.date %></td>
+		</tr>
+		<tr>
+			<th>Year</th>
+			<td><%= @articles.year %></td>
+		</tr>
+		<tr>
+			<th>URL</th>
+			<td><a href="<%= @articles.url %>" target="_blank"><%= @articles.url %></a></td>
+		</tr>
+	</table>
+	
+</section>
