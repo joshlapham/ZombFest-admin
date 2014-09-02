@@ -32,6 +32,7 @@
 	<table class="table table-bordered table-condensed table-striped">
 		<tr>
 			<th>Location</th>
+			<th>Address</th>
 			<th>Start Time</th>
 			<th>Latitude</th>
 			<th>Longitude</th>
@@ -39,6 +40,7 @@
 		<% @future_event.future_event_times.each do |event_time| %>
 			<tr>
 				<td><%= event_time.location_name %></td>
+				<td><%= event_time.address %></td>
 				<td><%= event_time.start_time %></td>
 				<td><%= event_time.lat %></td>
 				<td><%= event_time.long %></td>

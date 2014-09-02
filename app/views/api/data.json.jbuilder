@@ -30,6 +30,10 @@ json.futureEvents @future_events do |event|
 	json.content event.content
 	json.eventTimes event.future_event_times do |event_time|
 		json.locationName event_time.location_name
+		json.address event_time.address
+		json.city event_time.city
+		json.state event_time.state
+		json.postcode event_time.postcode
 		json.startTime event_time.start_time
 		json.lat event_time.lat
 		json.long event_time.long
