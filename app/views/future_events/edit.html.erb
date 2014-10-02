@@ -25,6 +25,10 @@
 				<th>Image URL</th>
 				<td><%= t.text_field(:image_url) %></td>
 			</tr>
+			<tr>
+				<th>Is Active?</th>
+				<td><%= t.check_box :is_active %></td>
+			</tr>
 		</table>
 
 		<%= submit_tag("Update Future Event", :class => "btn btn-success") %>
