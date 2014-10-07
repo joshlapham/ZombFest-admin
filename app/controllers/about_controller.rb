@@ -54,7 +54,7 @@ class AboutController < ApplicationController
   # - raises an error if title not present
   # - allows listed attribs to be mass-assigned
   def about_content_params
-    params.require(:about).permit(:title, :content)
+    params.require(:about).permit(:title, :content, :image_url)
   end
 
 end

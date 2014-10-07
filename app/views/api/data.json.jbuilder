@@ -9,6 +9,7 @@ end
 json.aboutContent @about_content do |about_content|
 	json.title about_content.title
 	json.content about_content.content
+	json.imageUrl about_content.image_url
 end
 
 json.pastEvents @past_events do |event|

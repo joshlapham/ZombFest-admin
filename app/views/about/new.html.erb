@@ -19,6 +19,10 @@
 				<th>Content</th>
 				<td><%= t.text_area(:content, :cols => '50', :rows => '10') %></td>
 			</tr>
+			<tr>
+				<th>Image URL</th>
+				<td><%= t.text_field(:image_url) %></td>
+			</tr>
 		</table>
 
 		<%= submit_tag("Create About Content", :class => "btn btn-success") %>
